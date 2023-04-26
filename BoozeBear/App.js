@@ -5,6 +5,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.Text} >Mi primer aplicación :D</Text>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -12,7 +13,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   Text:{
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
   container: {
     flex: 1,
