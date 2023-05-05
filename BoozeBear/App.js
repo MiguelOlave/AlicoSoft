@@ -1,34 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Agregar from './Componentes/Botones_Agregar';
-<<<<<<< HEAD
-//ok
-=======
 
-
-
->>>>>>> a5fe3c3ce02f64f1c4fbd4ab2ddfaa7b99b11b77
 export default function App() {
   return (
-    <View style={styles.container}>
+      <View style={styles.inicio}>
+      <Text style={styles.Text} >LOGO</Text>
       <Agregar/>
-      <Text style={styles.Text} >Mi primer aplicación :D</Text>
-      <Text style={styles.Text} >Trabajo y Rectitud amen</Text>
       <StatusBar style="auto" />
+  
+      <View style={styles.container}>
+        <Text style={styles.Text} >Mi primer aplicación :D</Text>
+        <Text style={styles.Text} >COOL</Text>
+        <StatusBar style="auto" />
+      </View>
     </View>
   );
+
+  
 }
+
 
 const styles = StyleSheet.create({
   Text:{
-    backgroundColor: 'red',
+  
+    backgroundColor: 'white',
   },
   container: {
-    alignItems: "flex-start",
+
     marginTop:40,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  inicio:{
+    alignItems: "flex-start",
+    marginTop:40,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 
 });
