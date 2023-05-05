@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Agregar from './Componentes/Boton_Agregar';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Agregar/>
       <Text style={styles.Text} >Mi primer aplicación :D</Text>
       <Text style={styles.Text} >Trabajo y Rectitud</Text>
-
       <StatusBar style="auto" />
     </View>
   );
@@ -17,9 +18,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   container: {
-    flex: 1,
+    alignItems: "flex-start",
+    marginTop:20,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
