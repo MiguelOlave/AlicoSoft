@@ -17,7 +17,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   Text:{
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
   container: {
     alignItems: "flex-start",
