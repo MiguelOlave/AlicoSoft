@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Agregar from './Componentes/Boton_Agregar';
-import V_Or_R from './Componentes/Botones_categorias';
+import V_Or_R from './Componentes/Botones_Categorias';
 
 export default function App() {
   return (
