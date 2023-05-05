@@ -5,8 +5,8 @@ import Agregar from './Componentes/Botones_Agregar';
 export default function App() {
   return (
     <View style={{ flex: 1 }}>
-      
-      <View style={styles.inicio}>
+
+      <View style={styles.logo}>
       <Text style={styles.Text} >LOGO</Text>
       <Agregar/>
       <StatusBar style="auto" />
@@ -38,13 +38,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  inicio:{
+  logo:{
     flexDirection: "row",
     alignItems: "flex-start",
     marginTop:40,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "space-between",
+    marginStart: 10,
+    marginEnd: 10,
    
   }
 

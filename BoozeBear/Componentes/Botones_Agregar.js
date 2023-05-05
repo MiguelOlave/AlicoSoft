@@ -20,14 +20,15 @@ const styles = StyleSheet.create({
       padding: 10,      
       color: "#fff",
       fontSize: 75,
-      fontWeight: "bold" 
+      fontWeight: "bold"
+
     },
     button:{
         
         width:60,
         height: 60,
         borderRadius: 50,
-        justifyContent: "flex-end"
+        
         
         
       
