@@ -1,7 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Agregar from './Componentes/Botones_Agregar';
+<<<<<<< HEAD
 //ok
+=======
+
+
+
+>>>>>>> a5fe3c3ce02f64f1c4fbd4ab2ddfaa7b99b11b77
 export default function App() {
   return (
     <View style={styles.container}>
@@ -15,7 +21,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   Text:{
-    backgroundColor: 'white',
+    backgroundColor: 'red',
   },
   container: {
     alignItems: "flex-start",
