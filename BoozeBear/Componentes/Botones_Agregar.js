@@ -16,15 +16,14 @@ export default function Agregar(){
 }
 const styles = StyleSheet.create({
     text:{
-
-      marginTop: -25,
-      marginStart: 9,
+      marginTop: -35,
+      padding: 10,      
       color: "#fff",
       fontSize: 75,
       fontWeight: "bold" 
     },
     button:{
-      
+        
         width:60,
         height: 60,
         borderRadius: 50,
