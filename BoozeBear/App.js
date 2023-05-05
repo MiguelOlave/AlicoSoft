@@ -1,15 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Agregar from './Componentes/Boton_Agregar';
-import V_Or_R from './Componentes/Botones_Categorias';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Agregar/>
-      <V_Or_R/>
-      <Text style={styles.Text} >Mi primer aplicación :D</Text>
-      <Text style={styles.Text} >Trabajo y Rectitud amen</Text>
+     <Text style={styles.Text} >Mi primer aplicación :D</Text>
+      <Text style={styles.Text} >Trabajo y Rectitud</Text>
       <StatusBar style="auto" />
     </View>
   );
