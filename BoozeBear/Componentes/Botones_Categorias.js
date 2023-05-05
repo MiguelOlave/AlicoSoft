@@ -8,21 +8,21 @@ export default function V_or_R(){
             <LinearGradient
                 // Button Linear Gradient
                 colors={['#4c669f', '#3b5998', '#192f6a']}
-                style={styles.button}>
-                <Text style={styles.text}>Verdad o reto</Text>
+                style={styles.boton}>
+                <Text style={styles.VoR}>Verdad o reto</Text>
             </LinearGradient>
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
-    text:{
+    VoR:{
         Color: 'gray',
         marginTop: 20,
         fontSize: 11
         
     },
-    button: {  
+    boton: {  
         width: "10",
         height: 40
 
