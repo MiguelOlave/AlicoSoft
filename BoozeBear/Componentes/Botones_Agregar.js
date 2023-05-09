@@ -15,6 +15,7 @@ export default function Agregar(){
         </TouchableOpacity>
     );
 }
+
 const styles = StyleSheet.create({
     text:{
       marginTop: -35,

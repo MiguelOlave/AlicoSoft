@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Agregar from './Componentes/Botones_Agregar';
-import { LinearGradient } from 'expo-linear-gradient';
-import { TouchableOpacity } from 'react-native';
+import Btns_Categorias from './Componentes/Btn_Categorias';
 
 
 export default function App() {
@@ -18,15 +17,14 @@ export default function App() {
       <View style={styles.container}>
         <Text style={styles.Text} >Mi primer aplicación :D</Text>
         <Text style={styles.Text} >COOL</Text>
+        <Btns_Categorias/>
         <StatusBar style="auto" />
 
       </View>
 
     </View>
    
-  );
-
-  
+  ); 
 }
 
 
