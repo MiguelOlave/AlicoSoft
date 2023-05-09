@@ -19,14 +19,12 @@ const styles = StyleSheet.create({
     VoR:{
         Color: 'gray',
         marginTop: 20,
-        fontSize: 11
-        
+        fontSize: 11     
     },
     boton: {  
         width: "10",
         height: 40
 
-      
     }
 
 })
