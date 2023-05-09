@@ -2,19 +2,21 @@ import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Agregar(){
-  // ok
+export default function VerdadOReto(){
     return(
       <TouchableOpacity>
-           <LinearGradient
-            // Button Linear Gradient
-            colors={['#4c669f', '#3b5998', '#192f6a']}
-            style={styles.button}>
-            <Text style={styles.text}>+</Text>
+            <LinearGradient
+                // Button Linear Gradient
+                colors={['#4c669f', '#3b5998', '#192f6a']}
+                style={styles.VoRStyle}>
+                <Text style={styles.text}>+</Text>
             </LinearGradient>
         </TouchableOpacity>
     );
 }
+
+
+
 const styles = StyleSheet.create({
     text:{
       marginTop: -35,
@@ -23,9 +25,10 @@ const styles = StyleSheet.create({
       fontSize: 75,
       fontWeight: "bold"
     },
-    button:{
+    VoRStyle:{
         width:60,
         height: 60,
         borderRadius: 50,
     }
   });
+
