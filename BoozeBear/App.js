@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Agregar from './Componentes/Botones_Agregar';
-import VerdadOReto from './Componentes/Btn_Categorias';
+import { LinearGradient } from 'expo-linear-gradient';
+import { TouchableOpacity } from 'react-native';
+
 
 export default function App() {
   return (
@@ -16,16 +18,22 @@ export default function App() {
       <View style={styles.container}>
         <Text style={styles.Text} >Mi primer aplicación :D</Text>
         <Text style={styles.Text} >COOL</Text>
-        <VerdadOReto/>
         <StatusBar style="auto" />
+
       </View>
 
     </View>
+   
   );
+
+  
 }
+
+
 
 const styles = StyleSheet.create({
   Text:{
+  
     backgroundColor: 'white',
   },
   container: {
@@ -44,6 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginStart: 10,
     marginEnd: 10,
+   
   }
 
 });
