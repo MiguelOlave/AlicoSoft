@@ -10,7 +10,7 @@ export default function Btns_Categorias(){
             // Button Linear Gradient
             colors={['#4c669f', '#3b5998', '#192f6a']}
             style={styles.button}>
-            <Text style={styles.text}>+</Text>
+            <Text style={styles.text}>Verdad o Reto</Text>
             </LinearGradient>
          </TouchableOpacity> 
         );
@@ -22,7 +22,7 @@ function QuienEsMas(){
         // Button Linear Gradient
         colors={['#4c669f', '#3b5998', '#192f6a']}
         style={styles.button}>
-        <Text style={styles.text}>+</Text>
+        <Text style={styles.text}>Quien es más</Text>
         </LinearGradient>
      </TouchableOpacity> 
     );
@@ -37,16 +37,15 @@ function QuienEsMas(){
 
 const styles = StyleSheet.create({
     text:{
-      marginTop: -35,
-      padding: 10,      
+      padding: 15,      
       color: "#fff",
-      fontSize: 75,
+      fontSize: 25,
       fontWeight: "bold"
     },
     button:{
-        width:60,
-        height: 60,
-        borderRadius: 50,
+        marginTop: 20,
+        width:"80%",
+        borderRadius: 40,
     },
     container: {
         flexDirection: "column",
