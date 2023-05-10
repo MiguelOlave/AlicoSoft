@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Agregar from './Componentes/Botones_Agregar';
+import Agregar from './Componentes/Btn_Agregar';
 import Btns_Categorias from './Componentes/Btn_Categorias';
 
 
@@ -16,8 +16,7 @@ export default function App() {
       </View>
     
       <View style={styles.container}>
-        <Text style={styles.Text} >Mi primer aplicación :D</Text>
-        <Text style={styles.Text} >COOL</Text>
+      <Text style={styles.Text} >content1</Text>
         <Btns_Categorias/>
         <StatusBar style="auto" />
 
@@ -32,12 +31,13 @@ export default function App() {
 const styles = StyleSheet.create({
   Text:{
   
-    backgroundColor: 'white',
+    backgroundColor: 'yellow',
   },
   container: {
     flexDirection: "column",
-    marginTop:40,
-    backgroundColor: '#fff',
+    marginTop:10,
+    width: '100%',
+    backgroundColor: '#17B862',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     marginTop:40,
-    backgroundColor: '#fff',
+    backgroundColor: '#2E4053',
     alignItems: 'center',
     justifyContent: "space-between",
     marginStart: 10,

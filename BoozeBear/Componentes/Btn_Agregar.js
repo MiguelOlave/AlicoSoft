@@ -7,7 +7,6 @@ export default function Agregar(){
     return(
       <TouchableOpacity>
            <LinearGradient
-            // Button Linear Gradient
             colors={['#4c669f', '#3b5998', '#192f6a']}
             style={styles.button}>
             <Text style={styles.text}>+</Text>

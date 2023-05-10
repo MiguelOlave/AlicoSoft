@@ -10,7 +10,7 @@ export default function Btns_Categorias(){
             // Button Linear Gradient
             colors={['#4c669f', '#3b5998', '#192f6a']}
             style={styles.button}>
-            <Text style={styles.text}>Verdad o Reto</Text>
+            <Text style={styles.text}>Verdad o reto</Text>
             </LinearGradient>
          </TouchableOpacity> 
         );
@@ -27,10 +27,24 @@ function QuienEsMas(){
      </TouchableOpacity> 
     );
 }
+function YoNuncaNunca(){
+    return(
+        <TouchableOpacity>
+        <LinearGradient
+        // Button Linear Gradient
+        colors={['#4c669f', '#3b5998', '#192f6a']}
+        style={styles.button}>
+        <Text style={styles.text}>Yo nunca nunca</Text>
+        </LinearGradient>
+     </TouchableOpacity> 
+    );
+}
     return(
         <View style={styles.container}>
+            <Text style={styles.Text} >content2</Text>
             <VerdadoReto/>
             <QuienEsMas/>
+            <YoNuncaNunca/>
       </View>
     );
 }
@@ -40,18 +54,20 @@ const styles = StyleSheet.create({
       padding: 15,      
       color: "#fff",
       fontSize: 25,
-      fontWeight: "bold"
+      fontWeight: "bold",
+      textAlign: 'center',
     },
     button:{
-        marginTop: 20,
-        width:"80%",
+        margin: 15,
+        width:"90%",
         borderRadius: 40,
     },
     container: {
+        border: "black",
+        borderWidth: 3,
         flexDirection: "column",
         marginTop:40,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'red',
+        width: '100%',
       },
   });
