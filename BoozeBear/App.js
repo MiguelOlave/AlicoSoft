@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Agregar from './Componentes/Btn_Agregar';
 import Btns_Categorias from './Componentes/Btn_Categorias';
+import { Image } from 'react-native';
+
 
 
 export default function App() {
@@ -10,7 +12,7 @@ export default function App() {
     <View style={{ flex: 1 }}>
 
       <View style={styles.inicio}>
-      <Text style={styles.Text} >LOGO</Text>
+      <Image source={require('./img/React.png')} style={styles.img} />
       <Agregar/>
       <StatusBar style="auto" />
       </View>
@@ -18,6 +20,7 @@ export default function App() {
       <View style={styles.container}>
       <Text style={styles.Text} >content1</Text>
         <Btns_Categorias/>
+        <Image source={require('./img/cicada.jpg')} style={styles.img} />
         <StatusBar style="auto" />
 
       </View>
@@ -42,15 +45,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   inicio:{
-    flexDirection: "row",
-    alignItems: "flex-start",
     marginTop:40,
-    backgroundColor: '#2E4053',
+    backgroundColor: 'orange',
+    flexDirection: "row", 
     alignItems: 'center',
     justifyContent: "space-between",
     marginStart: 10,
     marginEnd: 10,
-   
+  },
+  img:{
+    height: 75,
+    width: 75,
+    marginStart: 1,
+    resizeMode: 'contain',
+    
   }
 
 });
