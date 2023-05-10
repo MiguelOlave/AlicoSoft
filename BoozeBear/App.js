@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     width: 75,
     marginStart: 1,
     resizeMode: 'contain',
-    
+  
   }
 
 });
