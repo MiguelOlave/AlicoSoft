@@ -6,7 +6,7 @@ import Btns_Categorias from './Componentes/Btn_Categorias';
 
 export default function App() {
   return (
-    
+
     <View style={{ flex: 1 }}>
 
       <View style={styles.inicio}>
@@ -27,7 +27,6 @@ export default function App() {
    
   ); 
 }
-
 
 
 const styles = StyleSheet.create({
