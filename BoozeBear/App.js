@@ -18,9 +18,7 @@ export default function App() {
       </View>
     
       <View style={styles.container}>
-        <Text style={styles.Text} >content1</Text>
           <Btns_Categorias/>
-          <Image source={require('./img/cicada.jpg')} style={styles.img} />
           <StatusBar style="auto" />
       </View>
 

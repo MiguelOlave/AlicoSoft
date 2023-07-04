@@ -41,8 +41,7 @@ function YoNuncaNunca(){
 }
 
     return(
-        <View style={styles.container}>
-            <Text style={styles.Text} >content2</Text>
+        <View style={styles.container2}>
             <VerdadoReto/>
             <QuienEsMas/>
             <YoNuncaNunca/>
@@ -59,15 +58,15 @@ const styles = StyleSheet.create({
       textAlign: 'center',
     },
     button:{
-        margin: 15,
+        marginVertical: 35,
+        marginHorizontal: 15,
         width:"90%",
         borderRadius: 40,
     },
-    container: {
+    container2: {
         border: "black",
         borderWidth: 3,
         flexDirection: "column",
-        marginTop:40,
         backgroundColor: 'red',
         width: '100%',
       },
