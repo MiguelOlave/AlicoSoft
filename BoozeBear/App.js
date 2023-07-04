@@ -12,17 +12,16 @@ export default function App() {
     <View style={{ flex: 1 }}>
 
       <View style={styles.inicio}>
-      <Image source={require('./img/React.png')} style={styles.img} />
-      <Agregar/>
-      <StatusBar style="auto" />
+        <Image source={require('./img/React.png')} style={styles.img} />
+        <Agregar/>
+        <StatusBar style="auto" />
       </View>
     
       <View style={styles.container}>
-      <Text style={styles.Text} >content1</Text>
-        <Btns_Categorias/>
-        <Image source={require('./img/cicada.jpg')} style={styles.img} />
-        <StatusBar style="auto" />
-
+        <Text style={styles.Text} >content1</Text>
+          <Btns_Categorias/>
+          <Image source={require('./img/cicada.jpg')} style={styles.img} />
+          <StatusBar style="auto" />
       </View>
 
     </View>
@@ -30,10 +29,8 @@ export default function App() {
   ); 
 }
 
-
 const styles = StyleSheet.create({
   Text:{
-  
     backgroundColor: 'yellow',
   },
   container: {
@@ -58,7 +55,5 @@ const styles = StyleSheet.create({
     width: 75,
     marginStart: 1,
     resizeMode: 'contain',
-  
   }
-
 });

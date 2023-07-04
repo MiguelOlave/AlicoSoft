@@ -39,6 +39,7 @@ function YoNuncaNunca(){
      </TouchableOpacity> 
     );
 }
+
     return(
         <View style={styles.container}>
             <Text style={styles.Text} >content2</Text>
