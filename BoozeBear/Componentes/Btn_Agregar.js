@@ -1,26 +1,34 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
-export default function Agregar(){
-  // ok
+const Agregar = (props) => {
+    
+    const {text, onPress} = props
+
     return(
-      <TouchableOpacity>
-           <LinearGradient
-            colors={['#4c669f', '#3b5998', '#192f6a']}
-            style={styles.button}>
-            <Text style={styles.text}>+</Text>
-            </LinearGradient>
+        <TouchableOpacity
+        onPress={onPress}
+        style = {styles.button}
+        >
+            <Text style = {styles.text}>
+                { text }
+            </Text>
         </TouchableOpacity>
-    );
+    )
 }
+
+export default Agregar
+
 
 const styles = StyleSheet.create({
     text:{
-      marginTop: -35,
-      padding: 10,      
-      color: "#fff",
-      fontSize: 75,
+      marginTop: 10,
+      color: "red",
       fontWeight: "bold"
     },
     button:{
