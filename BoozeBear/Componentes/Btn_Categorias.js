@@ -1,23 +1,34 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import Agregar from '../Componentes/Btn_Agregar'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { StatusBar } from 'expo-status-bar'
+import { useNavigation } from '@react-navigation/native';
 
 export default function Btns_Categorias(){
+
+    const navigation = useNavigation();
+
     function VerdadoReto(){
         return(
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress = {() => { navigation.navigate('Screen_VoR')}}  >
             <LinearGradient
-            // Button Linear Gradient
             colors={['#4c669f', '#3b5998', '#192f6a']}
             style={styles.button}>
             <Text style={styles.text}>Verdad o reto</Text>
             </LinearGradient>
          </TouchableOpacity> 
+
         );
 }
 function QuienEsMas(){
     return(
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress = {() => { navigation.navigate('Screen_QuienEsMas')}}>
         <LinearGradient
         // Button Linear Gradient
         colors={['#4c669f', '#3b5998', '#192f6a']}
@@ -29,7 +40,8 @@ function QuienEsMas(){
 }
 function YoNuncaNunca(){
     return(
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress = {() => { navigation.navigate('Screen_YoNunca')}}>
         <LinearGradient
         // Button Linear Gradient
         colors={['#4c669f', '#3b5998', '#192f6a']}
@@ -71,3 +83,14 @@ const styles = StyleSheet.create({
         width: '100%',
       },
   });
+
+  /*
+              <TouchableOpacity
+            onPress = {() => { navigation.navigate('Screen_VoR')}}  >
+            <LinearGradient
+            colors={['#4c669f', '#3b5998', '#192f6a']}
+            style={styles.button}>
+            <Text style={styles.text}>Verdad o reto</Text>
+            </LinearGradient>
+         </TouchableOpacity> 
+         */
