@@ -1,14 +1,11 @@
-import React from 'react'
-import {View, Text} from 'react-native'
+import { View, Text } from "react-native";
 
-const Screen_VoR = ({ navigation }) => {
-    return(
-        <View>
-            <Text>
-                VERDAD O RETO
-            </Text>
-        </View>
-    )
-}
+const Screen_VoR = () => {
+  return (
+    <View>
+      <Text>VERDAD O RETO</Text>
+    </View>
+  );
+};
 
-export default Screen_VoR
+export default Screen_VoR;

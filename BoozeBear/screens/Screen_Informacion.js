@@ -1,14 +1,11 @@
-import React from 'react'
-import {View, Text} from 'react-native'
+import { View, Text } from "react-native";
 
 const Screen_Informacion = ({ navigation }) => {
-    return(
-        <View>
-            <Text>
-                Game 1
-            </Text>
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>INFORMACIÓN</Text>
+    </View>
+  );
+};
 
-export default Screen_Informacion
+export default Screen_Informacion;
