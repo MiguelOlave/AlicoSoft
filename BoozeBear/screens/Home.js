@@ -16,8 +16,8 @@ const Home = ({ navigation }) => {
       <View style={styles.inicio}>
         <Image source={require('../img/React.png')} style={styles.img} />
         <Agregar
-          text = "La otra interfazz"
-          onPress = {() => { navigation.navigate('Profile')}}  
+          text = "UN BOTON"
+          onPress = {() => { navigation.navigate('Screen_Informacion')}}  
         />
         <StatusBar style="auto" />
       </View>
