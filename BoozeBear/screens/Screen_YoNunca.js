@@ -1,14 +1,14 @@
 import React from 'react'
 import {View, Text} from 'react-native'
 
-const Profile = ({ navigation }) => {
+const Screen_YoNunca = ({ navigation }) => {
     return(
         <View>
             <Text>
-                MI PERFIL
+                YO NUNCA NUNCA
             </Text>
         </View>
     )
 }
 
-export default Profile
+export default Screen_YoNunca
