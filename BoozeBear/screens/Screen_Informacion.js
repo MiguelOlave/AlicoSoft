@@ -5,7 +5,7 @@ const Screen_Informacion = ({ navigation }) => {
     return(
         <View>
             <Text>
-                INFORMACIÓN
+                Game 1
             </Text>
         </View>
     )
