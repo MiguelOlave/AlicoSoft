@@ -1,14 +1,11 @@
-import React from 'react'
-import {View, Text} from 'react-native'
+import { View, Text } from "react-native";
 
 const Screen_QuienEsMas = ({ navigation }) => {
-    return(
-        <View>
-            <Text>
-                QUIEN ES MAS
-            </Text>
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>QUIEN ES MAS</Text>
+    </View>
+  );
+};
 
-export default Screen_QuienEsMas
+export default Screen_QuienEsMas;

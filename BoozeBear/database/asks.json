@@ -1,0 +1,26 @@
+{
+    "asksVerdad": [
+    {
+        "name": "¿Cuál es tu mayor miedo?",
+        "category": "Facil",
+        "id": 1
+      },
+      {
+        "name": "¿Con cuantas personas has estado?",
+        "category": "Hot",
+        "id": 2
+      }
+    ],
+    "asksReto": [
+      {
+        "name": "Canta una canción de tu artista favorito",
+        "category": "Facil",
+        "id": 1
+      },
+      {
+        "name": "Baila como un robot",
+        "category": "Facil",
+        "id": 2
+      }
+    ]
+}
