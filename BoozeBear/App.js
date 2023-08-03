@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import MainStack from "./navigation/MainStack";
+import MainStack from "./screens/MainStack";
 
 export default function App() {
   return (
