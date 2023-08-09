@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./Home";
+import Screen_Home from "./Screen_Home";
 import Screen_Informacion from "./Screen_Informacion";
 import Screen_VoR from "./Screen_VoR";
 import Screen_QuienEsMas from "./Screen_QuienEsMas";
@@ -13,10 +13,10 @@ const MainStack = () => {
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
-                    headerShown: true, //Esconde el titulo  del stack en la parte superior de la pantalla
+                    headerShown: false, //Esconde el titulo  del stack en la parte superior de la pantalla
                 }}
             >
-                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Screen_Home" component={Screen_Home} />
                 <Stack.Screen
                     name="Screen_Informacion"
                     component={Screen_Informacion}
