@@ -6,9 +6,6 @@ import asks from '../database/Preguntas_VoR.json'
 
 const Screen_VoR = ({ navigation }) => {
 
-    // comentario racista
-    //otro comentario racista
-
     const [currentQuestion, setCurrentQuestion] = useState();
     const [level, setLevel] = useState("Hot");
     const asksVerdad = asks.asksVerdad.filter((ask) => ask.category === level);
