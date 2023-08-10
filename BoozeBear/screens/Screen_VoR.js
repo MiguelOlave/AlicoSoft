@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { View, StyleSheet, Modal, Text, TouchableOpacity } from 'react-native'
 import Agregar from '../Componentes/Btn_Agregar'
 import Informacion from '../Componentes/Modal_info'
-import asks from '../database/asks.json'
+import asks from '../database/Preguntas_VoR.json'
 
 const Screen_VoR = ({ navigation }) => {
+
+    // comentario racista
+    //otro comentario racista
 
     const [currentQuestion, setCurrentQuestion] = useState();
     const [level, setLevel] = useState("Hot");
