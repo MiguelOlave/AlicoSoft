@@ -17,7 +17,7 @@ const Screen_Home = ({ navigation }) => {
         <Image source={require('../img/React.png')} style={styles.img} />
         <Agregar
           text="Agregar"
-          onPress={() => { navigation.navigate('Screen_Informacion') }}
+          onPress={() => { navigation.navigate('Personas') }}
         />
         <StatusBar style="auto" />
       </View>
