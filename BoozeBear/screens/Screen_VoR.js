@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, Modal, Text, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text,} from 'react-native'
 import Agregar from '../Componentes/Btn_Agregar'
 import Informacion from '../Componentes/Modal_info'
 import asks from '../database/Preguntas_VoR.json'
@@ -45,6 +45,9 @@ const Screen_VoR = ({ navigation }) => {
                     onPress={() => { setView(true); }}
                 />
             </View>
+
+
+
             <View
                 style={style.contenido}
             >
@@ -55,21 +58,13 @@ const Screen_VoR = ({ navigation }) => {
                     }}
                 >
                     <Text>
-                        (NOMBRE DE JUGADOR):
+                        Pregunta:
                     </Text>
                     <Text>
                         {currentQuestion}
                     </Text>
                 </View>
-                <View
-                    style={style.contenido}
-                >
-                    <Text>
-                        SIGUIENTE JUGADOR:
-                    </Text>
-                    <Text>
-                        ALAN TURING
-                    </Text>
+
                     <View
                         style={{
                             flexDirection: 'row'
@@ -84,7 +79,6 @@ const Screen_VoR = ({ navigation }) => {
                             onPress={muestreReto}
                         />
                     </View>
-                </View>
             </View>
         </View>
     )

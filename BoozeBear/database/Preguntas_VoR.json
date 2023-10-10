@@ -1,12 +1,42 @@
 {
     "asksVerdad": [
     {
-        "name": "¿Cuál es tu mayor miedo?",
+        "name": "¿Cuál es tu mayor miedo? 0",
         "category": "Hot",
         "id": 1
       },
       {
-        "name": "¿Con cuantas personas has estado?",
+        "name": "¿Con cuantas personas has estado? 000",
+        "category": "Hot",
+        "id": 2
+      },
+      {
+        "name": "1",
+        "category": "Hot",
+        "id": 2
+      },
+      {
+        "name": "2",
+        "category": "Hot",
+        "id": 2
+      },
+      {
+        "name": "3",
+        "category": "Hot",
+        "id": 2
+      },
+      {
+        "name": "4",
+        "category": "Hot",
+        "id": 2
+      },
+      {
+        "name": "5",
+        "category": "Hot",
+        "id": 2
+      },
+      {
+        "name": "6",
         "category": "Hot",
         "id": 2
       }
@@ -14,12 +44,12 @@
     "asksReto": [
       {
         "name": "Canta una canción de tu artista favorito",
-        "category": "Facil",
+        "category": "Hot",
         "id": 1
       },
       {
         "name": "Baila como un robot",
-        "category": "Facil",
+        "category": "Hot",
         "id": 2
       }
     ]
