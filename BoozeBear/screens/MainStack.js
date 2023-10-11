@@ -5,6 +5,7 @@ import Screen_Informacion from "./Screen_Informacion";
 import Screen_VoR from "./Screen_VoR";
 import Screen_QuienEsMas from "./Screen_QuienEsMas";
 import Screen_YoNunca from "./Screen_YoNunca";
+import Personas from "./Personas";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const MainStack = () => {
                 <Stack.Screen name="Screen_VoR" component={Screen_VoR} />
                 <Stack.Screen name="Screen_QuienEsMas" component={Screen_QuienEsMas} />
                 <Stack.Screen name="Screen_YoNunca" component={Screen_YoNunca} />
+                <Stack.Screen name="Personas" component={Personas} />
             </Stack.Navigator>
         </NavigationContainer>
     );
