@@ -39,6 +39,11 @@
             "name": "7",
             "category": "Quien",
             "id": 5
+        },
+        {
+            "name": "Quien es mas probable que se muera primero",
+            "category": "Quien",
+            "id": 5
         }
     ]
 
