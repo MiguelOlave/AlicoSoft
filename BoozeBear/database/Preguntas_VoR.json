@@ -68,6 +68,7 @@
         "id": 2
       },
       {
+<<<<<<< HEAD
         "name": "Quitate cuatro prendas de ropa que elijan los demás",
         "category": "Hot",
         "id": 2
@@ -119,6 +120,9 @@
       },
       {
         "name": "Dale un beso a otra persona del grupo, en la parte del cuerpo que prefieras",
+=======
+        "name": "12",
+>>>>>>> main
         "category": "Hot",
         "id": 2
       }
