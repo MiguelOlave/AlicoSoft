@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import Principal from '../Componentes/Btn_Principal'
+import QEM from '../Componentes/Btn_QEM'
 import Agregar from '../Componentes/Btn_Agregar'
 import Informacion from '../Componentes/Modal_info'
 import asks from '../database/Preguntas_QuienEsMas.json'
@@ -16,12 +18,10 @@ const Screen_QuienEsMas = ({ navigation }) => {
     setCurrentQuestion(asksQuienEsMas[random]?.name);
   }
 
-  //Llega hasta aqui
-
   const [view, setView] = useState(false)
 
   return (
-    
+
     <View
       style={{ flex: 1 }}
     >
@@ -30,51 +30,53 @@ const Screen_QuienEsMas = ({ navigation }) => {
         setView={setView}
         text='En la pantalla saldrá el nombre de cada jugador con su respectivo reto o verdad, al terminar dale click  al boton de verdad o reto para que el siguiente jugador lo cumpla.'
       />
-      
       <View
         style={style.superior}
       >
-        <Agregar
+        <Principal
           text='Inicio'
           onPress={() => { navigation.navigate('Screen_Home') }}
+          styleType="buttonQEM"
         />
-        <Agregar
-          text='Información'
+        <Principal
+          text='¿?'
           onPress={() => { setView(true); }}
+          styleType="buttonQEM"
         />
-        
       </View>
 
-        
+
       <View
         style={style.content}
       >
         <View
-        style={{
-          alignContent: 'center',
-          alignItems: 'center'
-      }}
-
-        >
-          <Text>
-            Pregunta
-          </Text>
-          <Text>
-            {currentQuestion}
-          </Text>
-
-        </View>
-
-        <View
-         style={{
-            flexDirection: 'row'
+          height="30%"
+          width="90%"
+          style={{
+            alignContent: 'center',
+            alignItems: 'center',
+            justifyContent: "center",
+            backgroundColor: "#e2d8e4",
+            marginTop: 145,
+            borderRadius: 30
           }}
         >
-          <Agregar
-            text='Next'
-            onPress={muestraQuienEsMas}
-          />
+
+          <Text
+            style={{
+              fontSize: 27,
+              textAlign: "center",
+              fontWeight: 'bold',
+            }}
+          >
+            {currentQuestion}
+          </Text>
         </View>
+
+        <QEM
+          text="Siguiente"
+          onPress={muestraQuienEsMas}
+        />
       </View>
     </View>
   )
@@ -84,18 +86,16 @@ export default Screen_QuienEsMas
 
 const style = StyleSheet.create({
   superior: {
-    marginTop: 20,
-    marginHorizontal: 10,
     flexDirection: "row",
     alignItems: 'center',
     justifyContent: "space-between",
+    backgroundColor: "#683475",
   },
   content: {
     flexDirection: "column",
-    marginTop: 10,
     width: '100%',
-    backgroundColor: '#17B862',
+    height: "100%",
+    backgroundColor: '#683475',
     alignItems: 'center',
-    justifyContent: 'center',
   }
 });

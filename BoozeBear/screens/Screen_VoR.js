@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, Text,} from 'react-native'
-import Agregar from '../Componentes/Btn_Agregar'
+import { View, StyleSheet, Text, } from 'react-native'
+import Principal from '../Componentes/Btn_Principal'
+import VoR from '../Componentes/Btn_VoR'
 import Informacion from '../Componentes/Modal_info'
 import asks from '../database/Preguntas_VoR.json'
 
@@ -36,17 +37,17 @@ const Screen_VoR = ({ navigation }) => {
             <View
                 style={style.superior}
             >
-                <Agregar
+                <Principal
                     text='Inicio'
                     onPress={() => { navigation.navigate('Screen_Home') }}
+                    styleType="buttonVoR"
                 />
-                <Agregar
-                    text='Información'
+                <Principal
+                    text='¿?'
                     onPress={() => { setView(true); }}
+                    styleType="buttonVoR"
                 />
             </View>
-
-
 
             <View
                 style={style.contenido}
@@ -57,28 +58,77 @@ const Screen_VoR = ({ navigation }) => {
                         alignItems: 'center'
                     }}
                 >
-                    <Text>
-                        Pregunta:
+                    <Text style={{
+                        marginTop: 135,
+                        fontSize: 42,
+                        textTransform: 'uppercase',
+                        letterSpacing: 3,
+                        fontWeight: 'bold',
+                    }}>
+                        JESUS
                     </Text>
-                    <Text>
-                        {currentQuestion}
-                    </Text>
-                </View>
-
                     <View
                         style={{
-                            flexDirection: 'row'
+                            backgroundColor: "#ffffff",
+                            borderColor: "#660000",
+                            borderRadius: 30,
+                            borderWidth: 1,
+                            width: '90%',
+                            height: 125,
+                            alignContent: "center",
+                            justifyContent: "center",
                         }}
                     >
-                        <Agregar
+                        <Text
+                            style={{
+                                marginHorizontal: 10,
+                                marginVertical: 10,
+                                fontSize: 20,
+                                fontWeight: 'bold',
+                                textAlign: "center",
+                            }}
+                        >
+                            {currentQuestion}
+                        </Text>
+                    </View>
+                </View>
+
+                <View
+                    style={{
+                        marginTop: 30,
+                        alignContent: 'center',
+                        alignItems: 'center',
+                        width: '63%',
+                        backgroundColor: "#cc0000",
+                        borderRadius: 30,
+                    }}
+                >
+                    <Text
+                        style={{
+                            marginTop: 10,
+                            fontSize: 20,
+                            color: "#ffffff",
+                            fontWeight: 'bold',
+                        }}
+                    >
+                        Siguiente: Judas
+                    </Text>
+                    <View
+                        style={{
+                            justifyContent: "space-between",
+                            flexDirection: 'row',
+                        }}
+                    >
+                        <VoR
                             text='Verdad'
                             onPress={muestreVerdad}
                         />
-                        <Agregar
+                        <VoR
                             text='Reto'
                             onPress={muestreReto}
                         />
                     </View>
+                </View>
             </View>
         </View>
     )
@@ -88,18 +138,16 @@ export default Screen_VoR
 
 const style = StyleSheet.create({
     superior: {
-        marginTop: 20,
-        marginHorizontal: 10,
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: "space-between",
+        backgroundColor: "#fddeda",
     },
     contenido: {
         flexDirection: "column",
-        marginTop: 10,
         width: '100%',
-        backgroundColor: '#17B862',
+        height: "100%",
+        backgroundColor: "#fddeda",
         alignItems: 'center',
-        justifyContent: 'center',
     }
 });
