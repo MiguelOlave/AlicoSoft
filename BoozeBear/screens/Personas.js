@@ -1,24 +1,42 @@
 import React, { useState, createContext } from "react";
-import { View, StyleSheet, Image, TextInput, Text, Button, FlatList } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  TextInput,
+  Text,
+  Button,
+  FlatList,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import Btn_Agregar from "../Componentes/Btn_Agregar";
 
 export const SavedNamesContext = createContext();
 
 const Screen_Personas = ({ navigation }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const [savedNames, setSavedNames] = useState([]);
 
   const saveNames = () => {
-    if (name.trim() !== '') {
+    if (name.trim() !== "") {
       setSavedNames([...savedNames, name]);
-      setName('');
+      setName("");
     }
+  };
+  const onPressRemove = (name) => {
+    console.log("🚀 ~ onPressRemove ~ name:", name)
+    if (savedNames.length <= 0) {
+      return;
+    }
+    const newSelectedNames = [...savedNames];
+    newSelectedNames.splice(savedNames.indexOf(name), 1);
+    setSavedNames(newSelectedNames);
   };
 
   return (
     <SavedNamesContext.Provider value={{ savedNames, saveNames }}>
       <View style={styles.container}>
-
         <View style={styles.header}>
           <Text style={styles.headerText}>Agregar Nombre</Text>
         </View>
@@ -29,16 +47,14 @@ const Screen_Personas = ({ navigation }) => {
           value={name}
           style={styles.input}
         />
-        <Button
-          title="Guardar"
-          onPress={saveNames}
-          color="#17B862"
-        />
+        <Button title="Guardar" onPress={saveNames} color="#17B862" />
         <FlatList
           data={savedNames}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
-            <Text style={styles.savedName}>{item}</Text>
+            <TouchableOpacity onPress={() => onPressRemove(item)}>
+              <Text style={styles.savedName}>{item}</Text>
+            </TouchableOpacity>
           )}
         />
       </View>
@@ -50,12 +66,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent:"center",
+    justifyContent: "center",
     marginBottom: 20,
     marginTop: 20,
   },
@@ -72,7 +88,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderWidth: 1,
     marginBottom: 10,
     padding: 10,
