@@ -6,9 +6,21 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 import Agregar from '../Componentes/Btn_Agregar'
 import Btns_Categorias from '../Componentes/Btn_Categorias';
+import { Button } from 'react-native-web'
+import { BaseButton, RawButton } from 'react-native-gesture-handler'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment } from '../store/game'
 
 
 const Screen_Home = ({ navigation }) => {
+  const value = useSelector((state) => state.game.value)
+  const dispatch = useDispatch()
+  const onPress1 = () => {
+    dispatch(increment(50))
+  }
+  const onPress2 = () => {
+    dispatch(decrement(2))
+  }
   return (
 
     <View style={{ flex: 1 }}>
@@ -26,6 +38,14 @@ const Screen_Home = ({ navigation }) => {
         <Btns_Categorias />
         <StatusBar style="auto" />
       </View>
+
+      <TouchableOpacity onPress={onPress1}  >
+        <Text>Press Incrementar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={onPress2}  >
+        <Text>Press Decrementar</Text>
+      </TouchableOpacity>
+      <Text>{`valor: ${value}`}</Text>
 
     </View>
   )
