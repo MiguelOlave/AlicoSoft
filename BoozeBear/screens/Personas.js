@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Btn_Agregar from "../Componentes/Btn_Agregar";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export const SavedNamesContext = createContext();
 
@@ -25,7 +26,6 @@ const Screen_Personas = ({ navigation }) => {
     }
   };
   const onPressRemove = (name) => {
-    console.log("🚀 ~ onPressRemove ~ name:", name)
     if (savedNames.length <= 0) {
       return;
     }
@@ -33,10 +33,11 @@ const Screen_Personas = ({ navigation }) => {
     newSelectedNames.splice(savedNames.indexOf(name), 1);
     setSavedNames(newSelectedNames);
   };
+  const insets = useSafeAreaInsets();
 
   return (
     <SavedNamesContext.Provider value={{ savedNames, saveNames }}>
-      <View style={styles.container}>
+      <View style={[styles.container, { paddingTop: insets.top }]}>
         <View style={styles.header}>
           <Text style={styles.headerText}>Agregar Nombre</Text>
         </View>
@@ -65,7 +66,7 @@ const Screen_Personas = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: 20,
     backgroundColor: "#ffffff",
   },
   header: {
