@@ -13,7 +13,7 @@ import { decrement, increment } from '../store/game'
 
 
 const Screen_Home = ({ navigation }) => {
-  const value = useSelector((state) => state.game.value)
+  const value = useSelector((state) => state.game.value) // LA MAGIA
   const dispatch = useDispatch()
   const onPress1 = () => {
     dispatch(increment(50))

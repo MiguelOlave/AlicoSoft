@@ -6,25 +6,21 @@
             "category": "Quien",
             "id": 1
         },
-
         {
             "name": "¿Quién es más probable que se case antes?",
             "category": "Quien",
             "id": 2
         },
-
         {
             "name": "¿Quién es más probable que se divorcie antes?",
             "category": "Quien",
             "id": 3
         },
-
         {
             "name": "¿Quién es más probable que tenga hijos antes?",
             "category": "Quien",
             "id": 4
         },
-
         {
             "name": "¿Quién es más probable que deje el trabajo antes?",
             "category": "Quien",
@@ -33,18 +29,52 @@
         {
             "name": "¿Quién es más probable que se haga rico?",
             "category": "Quien",
-            "id": 5
+            "id": 6
         },
         {
             "name": "¿Quién es más probable que tenga una aventura con alguien mayor?",
             "category": "Quien",
-            "id": 5
+            "id": 7
         },
         {
             "name": "¿Quién es más probable que se acueste con alguien de su mismo sexo?",
             "category": "Quien",
-            "id": 5
+            "id": 8
+        },
+        {
+            "name": "¿Quién es más probable que viaje alrededor del mundo primero?",
+            "category": "Quien",
+            "id": 9
+        },
+        {
+            "name": "¿Quién es más probable que gane la lotería?",
+            "category": "Quien",
+            "id": 10
+        },
+        {
+            "name": "¿Quién es más probable que se convierta en famoso?",
+            "category": "Quien",
+            "id": 11
+        },
+        {
+            "name": "¿Quién es más probable que viva en el extranjero?",
+            "category": "Quien",
+            "id": 12
+        },
+        {
+            "name": "¿Quién es más probable que aprenda a hablar un nuevo idioma?",
+            "category": "Quien",
+            "id": 13
+        },
+        {
+            "name": "¿Quién es más probable que inicie un negocio exitoso?",
+            "category": "Quien",
+            "id": 14
+        },
+        {
+            "name": "¿Quién es más probable que se convierta en un líder político?",
+            "category": "Quien",
+            "id": 15
         }
     ]
-
 }
