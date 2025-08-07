@@ -1,82 +1,156 @@
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { StatusBar } from 'expo-status-bar'
-import Agregar from '../Componentes/Btn_Agregar'
+import React, { useRef, useEffect } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, Animated, FlatList, Dimensions } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment } from '../store/game';
 import Btns_Categorias from '../Componentes/Btn_Categorias';
-import { Button } from 'react-native-web'
-import { BaseButton, RawButton } from 'react-native-gesture-handler'
-import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment } from '../store/game'
-
 
 const Screen_Home = ({ navigation }) => {
-  const value = useSelector((state) => state.game.value) // LA MAGIA
-  const dispatch = useDispatch()
-  const onPress1 = () => {
-    dispatch(increment(50))
-  }
-  const onPress2 = () => {
-    dispatch(decrement(2))
-  }
+
+  const imgSources = [
+    require('../img/BoozeBearLogo.png'),
+    require('../img/ImageQuienEsMas.png'),
+    require('../img/ImageVerdadoReto.png'),
+    require('../img/ImageYoNunca.png'),
+    require('../img/React.png'),
+  ];
+
+  const scrollX = useRef(new Animated.Value(0)).current;
+  const ITEM_WIDTH = 200;  // Ancho de cada imagen (debe coincidir con `CarruselImage`)
+
+  const renderImg = ({ item, index }) => {
+    const inputRange = [
+      (index - 1) * ITEM_WIDTH, // Imágenes anteriores
+      index * ITEM_WIDTH, // Imagen seleccionada
+      (index + 1) * ITEM_WIDTH, // Imágenes siguientes
+    ];
+
+    const translateY = scrollX.interpolate({
+      inputRange,
+      outputRange: [0, -60, 0], // Subir la imagen seleccionada
+      extrapolate: 'clamp',
+    });
+
+    return (
+      <Animated.View style={{ transform: [{ translateY }] }}>
+        <Image source={item} style={styles.CarruselImage} />
+      </Animated.View>
+    );
+  };
+
+  const colorAnimation = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(colorAnimation, {
+          toValue: 1,
+          duration: 6000,
+          useNativeDriver: false,
+        }),
+        Animated.timing(colorAnimation, {
+          toValue: 0,
+          duration: 6000,
+          useNativeDriver: false,
+        }),
+      ])
+    ).start();
+  }, [colorAnimation]);
+
+  const backgroundColor = colorAnimation.interpolate({
+    inputRange: [0, 0.33, 0.66, 1],
+    outputRange: ["#6a11cb", "#2575fc", "#ff512f", "#f09819"],
+  });
+
   return (
-
-    <View style={{ flex: 1 }}>
-
+    <SafeAreaView style={{ flex: 1 }}>
+      <Animated.View style={[StyleSheet.absoluteFillObject, { backgroundColor }]} />
       <View style={styles.inicio}>
-        <Image source={require('../img/React.png')} style={styles.img} />
-        <Agregar
-          text="Agregar"
-          onPress={() => { navigation.navigate('Personas') }}
-        />
-        <StatusBar style="auto" />
+        <TouchableOpacity onPress={() => navigation.navigate('Personas')}>
+          <Image
+            source={require('../img/AddUser.png')}
+            style={{ width: 75, height: 75, resizeMode: 'contain' }}
+          />
+        </TouchableOpacity>
       </View>
 
-      <View style={styles.content}>
-        <Btns_Categorias />
-        <StatusBar style="auto" />
+      <View style={styles.categoriaContainer}>
+
+        <View style={styles.imageContainer}>
+          <Image
+            source={require('../img/BoozeBearLogo.png')}
+            style={{
+              height: '100%',
+              width: '100%',
+              resizeMode: "contain",
+            }}
+          />
+        </View>
+
+        <View style={styles.flatListContainer}>
+          {/* Carrusel de imágenes con FlatList animado */}
+          <Animated.FlatList
+            onScroll={Animated.event(
+              [{
+                nativeEvent: {
+                  contentOffset: { x: scrollX }
+                }
+              }], { useNativeDriver: true })}
+            data={imgSources}
+            renderItem={renderImg}
+            keyExtractor={(item, index) => index.toString()}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            decelerationRate="fast"  // Para una animación más rápida al detenerse
+            snapToInterval={ITEM_WIDTH}  // Asegúrate de que sea el ancho de la imagen
+            snapToAlignment="center"  // Alínea las imágenes al centro
+            scrollEventThrottle={16}
+          />
+        </View>
       </View>
+    </SafeAreaView>
+  );
+};
 
-      <TouchableOpacity onPress={onPress1}  >
-        <Text>Press Incrementar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={onPress2}  >
-        <Text>Press Decrementar</Text>
-      </TouchableOpacity>
-      <Text>{`valor: ${value}`}</Text>
-
-    </View>
-  )
-}
-
-export default Screen_Home
+export default Screen_Home;
 
 const styles = StyleSheet.create({
-  Text: {
-    backgroundColor: 'yellow',
-  },
-  content: {
-    flexDirection: "column",
+  inicio: {
     marginTop: 10,
-    width: '100%',
-    backgroundColor: 'orange',
+    marginHorizontal: 10,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    borderColor: 'black',
+    //borderWidth: 0.5,
+    overflow: 'visible', // Asegura que no haya recorte en este contenedor
+  },
+  categoriaContainer: {
+    borderColor: 'black',
+    //borderWidth: 0.5,
+    flexDirection: 'column',
+    alignItems: 'center',
+    overflow: 'visible', // Permite que los elementos del carrusel no se recorten
+  },
+  imageContainer: {
+    borderColor: 'black',
+    //borderWidth: 0.5,
+    height: 250,
+    width: '80%',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 0,
+    overflow: 'visible', // También aquí, asegura visibilidad
   },
-  inicio: {
-    marginTop: 30,
-    paddingHorizontal: 7,
-    backgroundColor: 'orange',
-    flexDirection: "row",
-    alignItems: 'center',
-    justifyContent: "space-between",
+  flatListContainer: {
+    borderColor: 'black',
+    //borderWidth: 0.5,
+    height: 280, // Aumentar la altura para dar más espacio
+    paddingTop: 0, // Ajustar el espacio superior
+    overflow: 'visible', // Asegura que la imagen no se corte
   },
-  img: {
-    height: 75,
-    width: 75,
-    marginStart: 1,
+  CarruselImage: {
     resizeMode: 'contain',
-  }
+    width: 200,
+    height: '100%',
+  },
 });
+
